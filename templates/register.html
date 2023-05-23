@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Attendance-Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rajdhani&display=swap" rel="stylesheet">
+  <style>
+  *{
+        padding: 0;
+        margin:0;
+        box-sizing: border-box;
+    }
+
+
+
+.hero{
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+.background{
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    /* background-size: cover; */
+
+}
+
+.background img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter:brightness(0.8);
+    /* filter: blur(1px); */
+    /* -webkit-filter: blur(1px); */
+}
+
+
+.container{
+    display: grid;
+    background-color:rgba(255, 255, 255, 0.699);
+
+    height:650px;
+    width: 35%;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    transition: all 0.4s ease-in-out;
+
+}
+
+.container:hover{
+    transform: scale(1.05,1.05);
+    background-color: rgba(255, 255, 255, 0.750);
+}
+.submit-button{
+    width: 50%;
+    margin: auto;
+}
+
+.in{
+    width: 100%;
+}
+.middle{
+    margin: 0px 20%;
+}
+
+.container h2{
+    margin: auto;
+    font-family: 'Bree Serif', serif;
+}
+
+.container hr{
+    width:75%;
+    margin: auto;
+}
+label{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 17px;
+}
+
+@media(max-width:900px) {
+    .container{
+        width: 60%;
+        margin-left: 20%;
+    }
+
+
+}
+@media(max-width:750px) {
+    .container{
+        width: 80%;
+        margin-left: auto;
+    }
+
+}
+</style>
+</head>
+<body>
+    <div class="hero">
+
+
+    <div class="background">
+        <img src="/static/background-college.jpg" alt="">
+    </div>
+    <form class="container shadow-lg p-3 mb-2  rounded block" method="POST" action="/register">
+
+        <h2 class="mb-2">
+            Register
+        </h2>
+        <hr>
+
+        <!-- Username input -->
+        <div class="form-outline mb-3 middle">
+            <label class="form-label mt-3 fw-bold" for="username">Username</label>
+          <input type="text" id="username" name="username" class="form-control in" placeholder="Create Your Username" />
+        </div>
+
+        <!-- email input -->
+
+        <div class="form-outline mb-3 middle">
+            <label class="form-label fw-bold" for="email" >Email address</label>
+            <input type="email" id="email" class="form-control in" name="email" placeholder="abc@gmail.com" />
+          </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-3  middle">
+            <label class="form-label fw-bold" for="password">Password</label>
+          <input type="password" id="password"  name="password" class="form-control in" />
+        </div>
+
+        <div class="form-outline mb-3  middle">
+            <label class="form-label fw-bold" for="confirm"> Confirm Password</label>
+          <input type="password" id="confirm"  name="confirm" class="form-control in" />
+        </div>
+         <div class="row mb-3 middle ">{% if message %}
+      <p>{{ message }} !!</p>
+    {% endif %}</div>
+
+
+        <!-- Submit button -->
+        <button value="Register" type="submit" class="btn btn-success btn-block mb-4 submit-button" name="register" >Register</button>
+
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>Already have Account?<a href="/" name="login">Log-in</a></p>
+        </div>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
